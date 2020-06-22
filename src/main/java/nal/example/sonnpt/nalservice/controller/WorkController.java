@@ -52,7 +52,7 @@ public class WorkController {
 			workService.deleteWork(workId);
 			return new ResponseEntity<String>("Success", HttpStatus.OK);
 
-		} catch (NumberFormatException ex) {
+		} catch (Exception ex) {
 			return new ResponseEntity<String>("WorkId invalid", HttpStatus.BAD_REQUEST);
 		}
 
@@ -69,7 +69,7 @@ public class WorkController {
 			workService.editWork(id, writeDto);
 			return ResponseEntity.status(HttpStatus.OK).body("Success");
 
-		} catch (NumberFormatException ex) {
+		} catch (Exception ex) {
 			return new ResponseEntity<String>("WorkId invalid", HttpStatus.BAD_REQUEST);
 		}
 
