@@ -44,6 +44,7 @@ public class WorkController {
 
 	@RequestMapping(value = "/delete-work/{workId}", method = RequestMethod.DELETE)
 	public final ResponseEntity<?> removeWork(@PathVariable(value = "workId") Long workId) {
+
 		try {
 			long id = Long.valueOf(workId);
 			if (workService.isExistById(id)) {
